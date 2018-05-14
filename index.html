@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Matching Game</title>
+	<meta content="" name="description">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet prefetch">
+	<link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet prefetch">
+	<link href="css/app.css" rel="stylesheet">
+	<link href="#" rel="shortcut icon">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>Matching Game</h1>
+		</header>
+		<section class="score-panel">
+			<div class="clock" id="clock">0:0</div><span class="moves"></span> Moves
+			<ul>
+				<li><i class="fa fa-star" id="ff"></i></li>
+				<li><i class="fa fa-star" id="cc"></i></li>
+				<li><i class="fa fa-star" id="aa"></i></li>
+				<li style="list-style: none; display: inline">
+					<div class="restart">
+						<i class="fa fa-repeat"></i>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<div class="summary">
+			<h2 class="win">Congratulations!<br>
+			You have won the game!</h2>
+			<h3 class="win-time"></h3>
+			<p class="restart-button">New Game</p>
+		</div>
+		<ul class="deck">
+			<li class="card"><i class="fa fa-diamond" id="deck-0"></i></li>
+			<li class="card"><i class="fa fa-paper-plane-o" id="deck-1"></i></li>
+			<li class="card"><i class="fa fa-anchor" id="deck-2"></i></li>
+			<li class="card"><i class="fa fa-bolt" id="deck-3"></i></li>
+			<li class="card"><i class="fa fa-cube" id="deck-4"></i></li>
+			<li class="card"><i class="fa fa-anchor" id="deck-5"></i></li>
+			<li class="card"><i class="fa fa-leaf" id="deck-6"></i></li>
+			<li class="card"><i class="fa fa-bicycle" id="deck-7"></i></li>
+			<li class="card"><i class="fa fa-diamond" id="deck-8"></i></li>
+			<li class="card"><i class="fa fa-bomb" id="deck-9"></i></li>
+			<li class="card"><i class="fa fa-leaf" id="deck-10"></i></li>
+			<li class="card"><i class="fa fa-bomb" id="deck-11"></i></li>
+			<li class="card"><i class="fa fa-bolt" id="deck-12"></i></li>
+			<li class="card"><i class="fa fa-bicycle" id="deck-13"></i></li>
+			<li class="card"><i class="fa fa-paper-plane-o" id="deck-14"></i></li>
+			<li class="card"><i class="fa fa-cube" id="deck-15"></i></li>
+		</ul>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script> 
+	<script src="app.js">
+	</script>
+</body>
+</html>

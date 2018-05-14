@@ -1,0 +1,225 @@
+html {
+	box-sizing: border-box;
+}
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #ffffff url('../img/geometry2.png');
+	/* Background pattern from Subtle Patterns */
+	font-family: 'Coda', cursive;
+}
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+	width: 660px;
+	min-height: 680px;
+	background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+	padding: 32px;
+	border-radius: 10px;
+	box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 0 3em;
+}
+.deck .card {
+	height: 125px;
+	width: 125px;
+	background: #2e3d49;
+	font-size: 0;
+	color: #ffffff;
+	border-radius: 8px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+.deck .card.open {
+	transform: rotateY(0);
+	background: #02b3e4;
+	-webkit-animation: flip-in-ver-right 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.9) both;
+	animation: flip-in-ver-right 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.9) both;
+    pointer-events: none;
+}
+.deck .card.show {
+	font-size: 33px;
+}
+.deck .card.match {
+	cursor: default;
+	background: #02ccba;
+	font-size: 33px;
+	-webkit-animation: shake-horizontal 0.5s cubic-bezier(0.45, 0.1, 0.45, 0.9) both;
+	animation: shake-horizontal 0.5s cubic-bezier(0.45, 0.1, 0.45, 0.9) both;
+}
+.score-panel {
+	text-align: left;
+	width: 345px;
+	margin-bottom: 10px;
+}
+.score-panel .restart {
+	float: right;
+	cursor: pointer;
+}
+.score-panel li {
+	margin: 0;
+	padding: 0;
+	display: inline;
+	margin: 0 5px 0 0;
+	list-style: none;
+}
+/*
+ * Style for the Summary Panel.
+ */
+
+.summary {
+	background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+	text-align: center;
+	font-size: 26px;
+	width: 50%;
+	margin: 0 auto;
+	border-radius: 8px;
+	color: #2e3d49;
+	box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+}
+.restart-button {
+	cursor: pointer;
+	width: 25%;
+	margin: 5% 37%;
+	border-radius: 8px;
+	border: 0.5px solid black;
+}
+
+@media screen and (max-width: 636px) {
+	h1 {
+		font-size:16px;
+        font-weight: 700;
+	}
+	.restart-button {
+		width: 50%;
+		margin: 4% 23%;
+	}
+	.deck {
+		margin-top: 1em;
+	}
+	.deck, .summary {
+		width: 360px;
+		min-height: 400px;
+		padding: 10px;
+	}
+	.deck .card {
+		height: 72px;
+		width: 72px;
+	}
+}
+@media screen and (max-width: 358px) {
+	h1 {
+		font-size:12px;
+        font-weight: 700;
+	}
+	.deck, .summary {
+		width: 270px;
+		min-height: 300px;
+		padding: 9px;
+	}
+	.deck .card {
+		height: 54px;
+		width: 54px;
+	}
+    .score-panel{
+        width: 55%;
+    }
+	
+	.summary {
+		font-size:16px;
+}
+
+@-webkit-keyframes flip-in-ver-right {
+	0% {
+		-webkit-transform: rotateY(-80deg);
+		transform: rotateY(-80deg);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: rotateY(0);
+		transform: rotateY(0);
+		opacity: 1;
+	}
+}
+@keyframes flip-in-ver-right {
+	0% {
+		-webkit-transform: rotateY(-80deg);
+		transform: rotateY(-80deg);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: rotateY(0);
+		transform: rotateY(0);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes shake-horizontal {
+	0%, 100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+	10%, 30%, 50%, 70% {
+		-webkit-transform: translateX(-10px);
+		transform: translateX(-10px);
+	}
+	20%, 40%, 60% {
+		-webkit-transform: translateX(10px);
+		transform: translateX(10px);
+	}
+	80% {
+		-webkit-transform: translateX(8px);
+		transform: translateX(8px);
+	}
+	90% {
+		-webkit-transform: translateX(-8px);
+		transform: translateX(-8px);
+	}
+}
+@keyframes shake-horizontal {
+	0%, 100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+	10%, 30%, 50%, 70% {
+		-webkit-transform: translateX(-10px);
+		transform: translateX(-10px);
+	}
+	20%, 40%, 60% {
+		-webkit-transform: translateX(10px);
+		transform: translateX(10px);
+	}
+	80% {
+		-webkit-transform: translateX(8px);
+		transform: translateX(8px);
+	}
+	90% {
+		-webkit-transform: translateX(-8px);
+		transform: translateX(-8px);
+	}
+}
